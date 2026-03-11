@@ -280,15 +280,82 @@ main {
 }
 
 /* Pricing Section */
-.pricing-image {
-    text-align: center;
-    margin: 30px 0;
+.pricing-table-wrap {
+    margin: 18px auto 0;
+    max-width: 980px;
 }
 
-.pricing-image img {
-    max-width: 100%;
-    height: auto;
+.pricing-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pricing-table thead th {
+    background: #6a82ff;
+    color: #fff;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: clamp(20px, 1.8vw, 28px);
+    padding: 18px 18px;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.pricing-table thead th.col-price,
+.pricing-table thead th.col-meals {
+    text-align: center;
+}
+
+.pricing-table tbody td {
+    padding: 18px 18px;
+    font-size: clamp(18px, 1.6vw, 26px);
+    color: #000;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    line-height: 1.35;
+}
+
+.pricing-table tbody tr:nth-child(odd) td {
+    background: #f4f7ff;
+}
+
+.pricing-table .pricing-price {
+    text-align: center;
+    font-weight: 600;
+    color: #6a82ff;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.pricing-table .pricing-meals {
+    text-align: center;
+    font-weight: 600;
+    color: #6b4bb7;
+}
+
+@media (max-width: 640px) {
+    .pricing-table-wrap {
+        margin-top: 10px;
+    }
+
+    .pricing-table thead th {
+        font-size: 18px;
+        padding: 12px 12px;
+    }
+
+    .pricing-table tbody td {
+        font-size: 16px;
+        padding: 12px 12px;
+    }
+
+    .pricing-table .pricing-price {
+        font-weight: 700;
+    }
 }
 
 /* Services Section */
