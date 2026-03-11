@@ -296,7 +296,7 @@ main {
 }
 
 .pricing-table thead th {
-    background: #6a82ff;
+    background: #3a2416; /* erdei sötétbarna */
     color: #fff;
     font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-weight: 500;
@@ -315,27 +315,27 @@ main {
 .pricing-table tbody td {
     padding: 18px 18px;
     font-size: clamp(18px, 1.6vw, 26px);
-    color: #000;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    color: #1a120c;
+    border-top: 1px solid rgba(58,36,22,0.16);
     line-height: 1.35;
 }
 
 .pricing-table tbody tr:nth-child(odd) td {
-    background: #f4f7ff;
+    background: #f6efe6; /* meleg, krémes csíkozás */
 }
 
 .pricing-table .pricing-price {
     text-align: center;
-    font-weight: 600;
-    color: #6a82ff;
+    font-weight: 700;
+    color: #3a2416;
     letter-spacing: 0.01em;
     white-space: nowrap;
 }
 
 .pricing-table .pricing-meals {
     text-align: center;
-    font-weight: 600;
-    color: #6b4bb7;
+    font-weight: 700;
+    color: #5b3a24;
 }
 
 @media (max-width: 640px) {
