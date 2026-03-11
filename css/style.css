@@ -1068,6 +1068,12 @@ footer {
     .split-map {
         height: clamp(160px, 54vw, 220px);
     }
+
+    /* Mobile: make the Google map shorter (about half height) */
+    #hely .split-map {
+        min-height: 0;
+        height: clamp(90px, 27vw, 120px);
+    }
 }
 
 /* Extra-tight phone spacing for the first three split sections + gallery + schedule */
