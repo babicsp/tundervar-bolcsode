@@ -80,7 +80,7 @@ body {
 }
 
 main {
-    padding-top: calc(var(--header-h, 120px) + 12px);
+    padding-top: var(--header-h, 120px);
 }
 
 /* Hero Section */
@@ -745,7 +745,7 @@ footer {
     }
 
     main {
-        padding-top: calc(var(--header-h, 120px) + 12px);
+        padding-top: var(--header-h, 120px);
     }
 
     .hero-section {
@@ -840,7 +840,7 @@ footer {
     }
 
     main {
-        padding-top: calc(var(--header-h, 120px) + 12px);
+        padding-top: var(--header-h, 120px);
     }
 
     .gallery-grid {
