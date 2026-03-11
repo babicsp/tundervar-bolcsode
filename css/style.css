@@ -665,10 +665,15 @@ footer {
         min-height: 340px;
     }
 
-    /* Mobile/tablet: map in HEly should be much shorter (about half height) */
+    /* Mobile/tablet: HEly section should not force tall layout */
+    #hely .split-grid {
+        min-height: auto;
+    }
+
+    /* Mobile/tablet: map in HEly should be about half height */
     #hely .split-map {
         min-height: 0;
-        height: clamp(160px, 32vw, 200px);
+        height: clamp(120px, 22vw, 160px);
     }
 
     .gallery-grid {
@@ -1075,10 +1080,10 @@ footer {
         height: clamp(160px, 54vw, 220px);
     }
 
-    /* Phone: make the Google map shorter (about half height) */
+    /* Phone: make the Google map about half height */
     #hely .split-map {
         min-height: 0;
-        height: clamp(140px, 30vw, 180px);
+        height: clamp(90px, 24vw, 120px);
     }
 }
 
