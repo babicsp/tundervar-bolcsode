@@ -25,7 +25,7 @@ body {
     right: 0;
     background-color: #ffffff;
     z-index: 1000;
-    padding: 26px 0;
+    padding: 22px 0;
 }
 
 .header-container {
@@ -48,13 +48,19 @@ body {
     white-space: nowrap;
 }
 
+@media (min-width: 981px) {
+    .site-title {
+        margin-left: 10px;
+    }
+}
+
 .nav-menu {
     display: flex;
     gap: 22px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .nav-menu a {
@@ -307,6 +313,25 @@ main {
 }
 
 /* Pricing Section */
+/* Align ÁRAK to the same left indent as the split sections (e.g. RÓLUNK) on desktop. */
+#arak.content-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#arak .section-container.arak-title {
+    max-width: none;
+    margin: 0;
+    padding-left: clamp(48px, 7vw, 140px);
+    padding-right: clamp(28px, 4vw, 90px);
+}
+
+#arak .section-container.arak-table {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .pricing-table-wrap {
     margin: 18px auto 0;
     max-width: 980px;
@@ -455,8 +480,39 @@ main {
 }
 
 /* Gallery */
+/* Align GALÉRIA to the same left indent as the split sections (e.g. RÓLUNK) on desktop. */
+#galeria.content-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #galeria .section-container {
+    max-width: none;
+    margin: 0;
+    padding-left: clamp(48px, 7vw, 140px);
+    padding-right: clamp(28px, 4vw, 90px);
+}
+
+#galeria .gallery-grid {
     max-width: 1400px;
+}
+
+@media (max-width: 980px) {
+    #galeria.content-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #galeria .section-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #galeria .gallery-grid {
+        max-width: none;
+    }
 }
 
 .gallery-grid {
@@ -551,7 +607,25 @@ body.no-scroll {
 
 /* Contact */
 #jelentkezes.content-section {
-    padding-bottom: 40px;
+    padding: 56px 0 32px;
+}
+
+#kapcsolat.content-section {
+    padding: 32px 0 56px;
+}
+
+/* Align these sections to the same left rhythm as the split sections on desktop. */
+#jelentkezes .section-container,
+#kapcsolat .section-container {
+    max-width: none;
+    margin: 0;
+    padding-left: clamp(48px, 7vw, 140px);
+    padding-right: clamp(28px, 4vw, 90px);
+}
+
+#jelentkezes .section-content,
+#kapcsolat .section-content {
+    max-width: 560px;
 }
 
 #jelentkezes .section-content {
@@ -559,9 +633,35 @@ body.no-scroll {
     line-height: 1.75;
 }
 
-#kapcsolat.content-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+@media (max-width: 980px) {
+    #arak.content-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #arak .section-container.arak-title,
+    #arak .section-container.arak-table {
+        max-width: 980px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #jelentkezes.content-section {
+        padding: 56px 20px 32px;
+    }
+
+    #kapcsolat.content-section {
+        padding: 32px 20px 56px;
+    }
+
+    #jelentkezes .section-container,
+    #kapcsolat .section-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .contact-info {
@@ -578,6 +678,29 @@ body.no-scroll {
     font-weight: 600;
     font-size: 1.15em;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 1.05em;
+    height: 1.05em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    opacity: 0.9;
+}
+
+.contact-icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.contact-text {
+    word-break: break-word;
 }
 
 .contact-info a:hover {
@@ -1150,12 +1273,11 @@ footer {
 
     /* Contact: tighter vertical rhythm */
     #jelentkezes.content-section {
-        padding-bottom: 26px;
+        padding: 34px 15px 18px;
     }
 
     #kapcsolat.content-section {
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding: 18px 15px 34px;
     }
 
     #kapcsolat .section-title {
