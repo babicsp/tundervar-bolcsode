@@ -1,0 +1,1039 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    padding: 26px 0;
+}
+
+.header-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.site-title {
+    font-family: 'Life Savers', Georgia, 'Times New Roman', serif;
+    font-size: clamp(34px, 3.6vw, 54px);
+    line-height: 1.05;
+    color: #000;
+    text-decoration: none;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-family: 'Life Savers', Georgia, 'Times New Roman', serif;
+    transition: color 0.2s ease;
+    padding: 4px 0;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #404040;
+}
+
+main {
+    padding-top: calc(var(--header-h, 120px) + 12px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: #ffffff;
+    padding: 12px 30px 0;
+}
+
+.hero-media {
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+    height: 536px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://static.wixstatic.com/media/193324_cd1529ce2f0d4fcb9fd96924e2799cca~mv2.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.hero-logo {
+    position: absolute;
+    left: 40px;
+    bottom: 36px;
+    width: min(420px, 55%);
+    height: auto;
+    mix-blend-mode: screen;
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+.content-section.alt-bg {
+    background-color: #fef9f5;
+}
+
+.content-section.split-section {
+    padding: 0;
+}
+
+.content-section.split-section .section-container {
+    max-width: none;
+}
+
+.section-container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: clamp(44px, 4.6vw, 70px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #000;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+
+.section-content {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #2c2c2c;
+}
+
+.section-content.centered {
+    text-align: center;
+}
+
+.section-content p {
+    margin-bottom: 20px;
+}
+
+.lead-italic {
+    font-size: clamp(22px, 2.1vw, 32px);
+    line-height: 1.55;
+    font-style: italic;
+    color: #000;
+}
+
+.lead-italic strong {
+    font-weight: 400;
+}
+
+.large-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Split (image/text) sections */
+.split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 640px;
+}
+
+/* When multiple split blocks follow each other, add a subtle separator */
+.split-grid + .split-grid {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Text-left (media right) should feel like the Wix layout: media wider */
+.split-grid.split-text-left {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+}
+
+/* Media-left (text right) */
+.split-grid.split-media-left {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+}
+
+.split-text {
+    padding-top: clamp(56px, 6vw, 110px);
+    padding-bottom: clamp(56px, 6vw, 110px);
+    padding-left: clamp(48px, 7vw, 140px);
+    padding-right: clamp(28px, 4vw, 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* When the text is on the right, match the bigger right-side padding seen on Wix */
+.split-grid.split-media-left .split-text {
+    padding-left: clamp(28px, 4vw, 90px);
+    padding-right: clamp(48px, 7vw, 140px);
+}
+
+.split-text .section-content {
+    max-width: 560px;
+}
+
+.split-media,
+.split-map {
+    min-height: 640px;
+}
+
+.split-media {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.split-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.outline-button {
+    display: inline-block;
+    padding: 14px 34px;
+    border: 2px solid #000;
+    border-radius: 999px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 600;
+    background: transparent;
+}
+
+.outline-button:hover {
+    background: rgba(0,0,0,0.04);
+}
+
+.subtitle {
+    font-style: italic;
+    font-weight: 500;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: clamp(18px, 1.5vw, 26px);
+    margin-top: 34px;
+    margin-bottom: 18px;
+}
+
+.subtitle.subtitle-dates {
+    font-size: clamp(22px, 1.9vw, 30px);
+    margin-top: 30px;
+    margin-bottom: 14px;
+}
+
+.date-lines {
+    margin-top: 6px;
+}
+
+.date-lines p {
+    margin-bottom: 8px;
+}
+
+.date-lines .lead-italic {
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.35;
+}
+
+/* Pricing Section */
+.pricing-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.pricing-image img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+/* Services Section */
+.service-box {
+    background-color: #fef9f5;
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 3px;
+}
+
+.service-box h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+.service-box p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Download Button */
+.button-container {
+    margin-top: 25px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2c2c2c;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #4a4a4a;
+    transform: translateY(-1px);
+}
+
+/* Schedule */
+.schedule-grid {
+    display: grid;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 18px;
+    padding: 10px 0;
+    border-left: 2px solid rgba(0, 0, 0, 0.55);
+    padding-left: 18px;
+}
+
+.schedule-item .time {
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.02em;
+}
+
+.schedule-item .activity {
+    color: #2c2c2c;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.86);
+    z-index: 3000;
+    padding: 24px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: min(1200px, 92vw);
+    max-height: 86vh;
+    object-fit: contain;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.lightbox-close {
+    top: 16px;
+    right: 16px;
+    font-size: 28px;
+}
+
+.lightbox-prev {
+    left: 16px;
+}
+
+.lightbox-next {
+    right: 16px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+@media (max-width: 640px) {
+    .lightbox-prev,
+    .lightbox-next {
+        display: none;
+    }
+}
+
+/* Contact */
+#jelentkezes.content-section {
+    padding-bottom: 40px;
+}
+
+#kapcsolat.content-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-info {
+    font-size: 16px;
+}
+
+.contact-info p {
+    margin: 12px 0;
+}
+
+.contact-info a {
+    color: #2c2c2c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f5;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 980px) {
+    #header {
+        padding: 20px 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 14px;
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    .site-title {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        gap: 16px;
+        padding-top: 0;
+    }
+
+    main {
+        padding-top: calc(var(--header-h, 120px) + 12px);
+    }
+
+    .hero-section {
+        padding: 0;
+    }
+
+    /* Mobile hero should be edge-to-edge */
+    .hero-media {
+        max-width: none;
+        margin: 0;
+        width: 100%;
+        height: clamp(320px, 55vw, 536px);
+    }
+
+    .hero-logo {
+        left: 18px;
+        bottom: 18px;
+        width: min(360px, 72%);
+    }
+
+    .section-title {
+        font-size: clamp(34px, 6vw, 52px);
+    }
+
+    .lead-italic {
+        font-size: 22px;
+    }
+
+    .split-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .split-text {
+        padding: 44px 22px;
+    }
+
+    .split-media,
+    .split-map {
+        min-height: 340px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .schedule-grid {
+        gap: 10px;
+        margin-top: 6px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 120px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 6px 0;
+        padding-left: 14px;
+    }
+
+    .schedule-item .time {
+        white-space: nowrap;
+        line-height: 1.3;
+    }
+
+    .schedule-item .activity {
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 640px) {
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .hero-section {
+        padding: 0;
+    }
+
+    main {
+        padding-top: calc(var(--header-h, 120px) + 12px);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .gallery-grid img {
+        height: 180px;
+    }
+
+    .service-box {
+        padding: 25px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+}
+
+/* --- Wix parity: wider hero/header + normalize typography --- */
+.header-container {
+    max-width: 1600px;
+    padding: 0 40px;
+}
+
+.hero-media {
+    max-width: 1600px;
+}
+
+/* Keep main nav in one line; allow horizontal scroll if viewport is too narrow */
+.nav-menu {
+    flex-wrap: nowrap;
+    gap: clamp(12px, 1.6vw, 22px);
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-menu a {
+    font-size: clamp(14px, 0.95vw, 16px);
+}
+
+/* Make content typography a bit smaller + consistent */
+.section-title {
+    font-size: clamp(34px, 3.4vw, 56px);
+    margin-bottom: 26px;
+}
+
+.section-content {
+    font-size: 16px;
+}
+
+.lead-italic {
+    font-size: clamp(18px, 1.55vw, 26px);
+}
+
+/* Buttons: same font + sizing */
+.outline-button,
+.download-button {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Section sub-headings: same display font */
+.service-box h3,
+.schedule-box h3 {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+}
+
+.contact-info {
+    font-size: 16px;
+}
+
+@media (max-width: 980px) {
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: clamp(30px, 6vw, 44px);
+    }
+
+    .lead-italic {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+}
+
+/* Mobile nav + phone layout polish */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.6);
+    outline-offset: 3px;
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 999px;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #000;
+    border-radius: 999px;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+@media (max-width: 980px) {
+    #header {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* Title left, hamburger right, dropdown nav below */
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+    }
+
+    .site-title {
+        flex: 1 1 auto;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        order: 2;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 10px 0 0;
+        flex-wrap: nowrap;
+        overflow: visible;
+    }
+
+    body.nav-open .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+        padding: 10px 0;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        text-align: left;
+        letter-spacing: 0.06em;
+    }
+
+    .hero-logo {
+        width: min(260px, 72%);
+    }
+}
+
+@media (max-width: 640px) {
+    .site-title {
+        font-size: clamp(26px, 7vw, 36px);
+    }
+
+    .section-title {
+        font-size: clamp(28px, 8vw, 40px);
+        margin-bottom: 18px;
+    }
+
+    .section-content {
+        font-size: 15px;
+    }
+
+    .lead-italic {
+        font-size: clamp(16px, 4.6vw, 20px);
+        line-height: 1.45;
+    }
+
+    .hero-media {
+        height: clamp(210px, 56vw, 300px);
+    }
+
+    .hero-logo {
+        left: 12px;
+        bottom: 12px;
+        width: min(220px, 76%);
+    }
+
+    .split-text {
+        padding: 26px 16px;
+    }
+
+    .split-media,
+    .split-map {
+        min-height: 200px;
+    }
+
+    .gallery-grid {
+        gap: 6px;
+    }
+
+    .gallery-grid img {
+        height: 120px;
+    }
+
+    .date-lines p {
+        margin-bottom: 3px;
+    }
+
+    .date-lines .lead-italic {
+        line-height: 1.25;
+    }
+}
+
+/* Ensure hero stays full-width on mobile (override later desktop max-width rule) */
+@media (max-width: 980px) {
+    .hero-media {
+        max-width: none;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* Mobile-only: make every split block follow Wix mobile rhythm:
+   title -> full-width media -> text (button after text if present). */
+@media (max-width: 980px) {
+    .split-grid,
+    .split-grid.split-text-left,
+    .split-grid.split-media-left {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "media"
+            "text"
+            "actions";
+    }
+
+    /* Let title/content/buttons become direct grid items so we can reorder */
+    .split-text {
+        display: contents;
+    }
+
+    .split-text > .section-title {
+        grid-area: title;
+        padding: 12px 16px 6px;
+        margin: 0;
+    }
+
+    .split-text > .section-content {
+        grid-area: text;
+        padding: 8px 16px 14px;
+        max-width: none;
+    }
+
+    .split-text > .button-container {
+        grid-area: actions;
+        padding: 0 16px 14px;
+        margin-top: -4px;
+    }
+
+    .split-media,
+    .split-map {
+        grid-area: media;
+        min-height: 0;
+        height: clamp(170px, 42vw, 260px);
+    }
+
+    .split-map iframe {
+        height: 100%;
+    }
+
+    /* Reduce extra space before consecutive blocks (e.g., NAPIREND) */
+    .split-grid + .split-grid .split-text > .section-title {
+        padding-top: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .split-text > .section-title {
+        padding: 12px 14px 6px;
+    }
+
+    .split-text > .section-content {
+        padding: 8px 14px 14px;
+    }
+
+    .split-text > .button-container {
+        padding: 0 14px 14px;
+    }
+
+    .split-media,
+    .split-map {
+        height: clamp(160px, 54vw, 220px);
+    }
+}
+
+/* Extra-tight phone spacing for the first three split sections + gallery + schedule */
+@media (max-width: 640px) {
+    #rolunk .section-title,
+    #hely .section-title,
+    #nyitvatartas .section-title {
+        font-size: clamp(22px, 7vw, 32px);
+        letter-spacing: 0.03em;
+    }
+
+    .section-content p {
+        margin-bottom: 14px;
+    }
+
+    /* Reduce space above Gallery */
+    #galeria.content-section {
+        padding-top: 28px;
+    }
+
+    #galeria .section-title {
+        margin-bottom: 10px;
+    }
+
+    #galeria .gallery-grid {
+        margin-top: 10px;
+    }
+
+    /* Reduce space above/below ÁRAK and tighten transition into SZOLGÁLTATÁSOK/NAPIREND */
+    #arak.content-section {
+        padding: 28px 15px 22px;
+    }
+
+    #arak .section-title {
+        margin-bottom: 12px;
+    }
+
+    #arak .pricing-image {
+        margin: 12px 0 0;
+    }
+
+    /* Keep schedule time + activity on one row (more compact) */
+    .schedule-grid {
+        gap: 8px;
+        margin-top: 4px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 92px 1fr;
+        gap: 10px;
+        padding: 5px 0;
+        padding-left: 12px;
+    }
+
+    .schedule-item .time {
+        white-space: nowrap;
+        line-height: 1.25;
+    }
+
+    .schedule-item .activity {
+        line-height: 1.25;
+    }
+
+    /* Contact: tighter vertical rhythm */
+    #jelentkezes.content-section {
+        padding-bottom: 26px;
+    }
+
+    #kapcsolat.content-section {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    #kapcsolat .section-title {
+        margin-bottom: 10px;
+    }
+
+    #kapcsolat .contact-info p {
+        margin: 8px 0;
+    }
+}
